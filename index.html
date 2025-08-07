@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólió</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar-container">
+    <nav class="navbar">
+      <a href="#about" class="nav-link">About me</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="home-section">
+    <div class="home-left">
+      <h2>Hello,</h2>
+      <h1>My name is Zoltan Ban</h1>
+
+      <h3>I'm a university student who believes in <span id="typewriter"></span></h3>
+      <div class="button-group">
+        <a href="#contact" class="btn hire-btn">Hire Me</a>
+        <a href="cv.pdf" download class="btn cv-btn">Download CV</a>
+      </div>
+    </div>
+    <div class="home-right">
+      <img src="person.jpg" alt="Portrait" class="profile-img" />
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="about-left">
+      <div class="about-main-img">
+        
+<img src="casual.png" class="about-img fade-in" id="mainImage" />
+
+      </div>
+      <div class="about-thumbnails">
+        <img src="casual.PNG" class="thumb active"  data-index="0" />
+        <img src="solider2.jpeg" class="thumb" data-index="1" />
+        <img src="elegant.PNG" class="thumb" data-index="2" />
+        <img src="sport.png" class="thumb" data-index="3" />
+      </div>
+    </div>
+    <div class="about-right">
+      <div id="about-text">
+        <!-- Dinamikusan cserélődő szöveg -->
+      </div>
+    </div>
+
+
+  </section>
+ <div class="more-button-container">
+  <button id="moreBtn" class="bounce-button">
+    <i class="fas fa-chevron-down"></i>
+  </button>
+  <p class="more-label">More about me</p>
+</div>
+
+  <!-- További szekciók -->
+   <section id="skills" class="timeline-section">
+  <h2>Skills Timeline</h2>
+  <div class="timeline-line"></div>
+  <div class="timeline-container">
+
+
+    <div class="timeline-item left" data-year="2018.09." data-icon="fa-laptop-code" data-text="Secondary IT Technican school" >
+      
+    </div>
+
+    <div class="timeline-item right" data-year="2018.10." data-text="Start working at the local McDonald's" data-icon="fa-burger">
+      
+    </div>
+
+    <div class="timeline-item right" data-year="2020.05." data-text="Driver Licence for car" data-icon="fa-car-side"></div>
+
+    <div class="timeline-item left" data-year="2021.09." data-text="Language Examination Certificate English B2" data-icon="fa-language"></div>
+
+    <div class="timeline-item right" data-year="2022.01." data-text="Promoted to Guest Experience Manager at McDonald's" data-icon="fa-briefcase"></div>
+    <div class="timeline-item left" data-year="2022.06." data-text="Secondary school diploma" data-icon="fa-user-graduate"></div>
+    
+
+    <div class="timeline-item left" data-year="2023.05." data-text="IT technician qualification" data-icon="fa-laptop"></div>
+    <div class="timeline-item right" data-year="2023.06." data-text="László Iparcikk administrator" data-icon="fa-briefcase"></div>
+    <div class="timeline-item left" data-year="2023.09." data-text="Accepted to University of Pannonia, Computer Science BSc" data-icon="fa-university"></div>
+
+    <div class="timeline-item right" data-year="2024.04." data-text="Motherson EHS Intern" data-icon="fa-helmet-safety"></div>
+ <div class="timeline-item right" data-year="2025.01." data-text="Head of Social affairs" data-icon="fa-user-tie"></div>
+    <div class="timeline-item right" data-year="2025.02." data-text="Valeo Customer Quality Intern" data-icon="fa-industry"></div>
+    <div class="timeline-item right" data-year="2025.04." data-text="Joined to Hungarian Defence Forces" data-icon="fa-person-military-rifle"></div>
+    <div class="timeline-item right" data-year="2025.06." data-text="Driver licence for motorcycle" data-icon="fa-motorcycle"></div>
+  </div>
+</section>
+
+ <section id="projects" class="projects-section">
+  <h2>My Projects</h2>
+  <div class="projects-grid">
+
+    <!-- Project 1 -->
+    <div class="project-card">
+      <div class="project-image">
+        <img src="your-image-1.jpg" alt="Project 1">
+        <div class="overlay">
+          <span>Click</span>
+        </div>
+      </div>
+      <p class="project-name">Hair Salon</p>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <div class="project-image">
+        <img src="your-image-2.jpg" alt="Project 2">
+        <div class="overlay">
+          <span>Click</span>
+        </div>
+      </div>
+      <p class="project-name">Personal Trainer</p>
+    </div>
+
+    <!-- Project 3 (in progress) -->
+    <div class="project-card in-progress">
+      <div class="project-image">
+        <img src="your-image-3.png" alt="Project 3">
+        <div class="overlay">
+          <span>Click</span>
+        </div>
+      </div>
+      <p class="project-name">Portfolio Website<br><span class="status">In Progress</span></p>
+    </div>
+
+    <!-- Project 4 (in progress) -->
+    <div class="project-card in-progress">
+      <div class="project-image">
+        <img src="your-image-4.jpg" alt="Project 4">
+        <div class="overlay">
+          <span>Click</span>
+        </div>
+      </div>
+      <p class="project-name">Online Store<br><span class="status">In Progress</span></p>
+    </div>
+
+    <!-- Project 5 (in progress) -->
+    <div class="project-card in-progress">
+      <div class="project-image">
+        <img src="your-image-5.jpg" alt="Project 5">
+        <div class="overlay">
+          <span>Click</span>
+        </div>
+      </div>
+      <p class="project-name">Event Page<br><span class="status">In Progress</span></p>
+    </div>
+
+    <!-- Project 6 (in progress) -->
+    <div class="project-card in-progress">
+      <div class="project-image">
+        <img src="your-image-6.jpg" alt="Project 6">
+        <div class="overlay">
+          <span>Click</span>
+        </div>
+      </div>
+      <p class="project-name">Fitness Club<br><span class="status">In Progress</span></p>
+    </div>
+
+  </div>
+</section>
+
+
+  <section id="contact" class="contact-section">
+  <h2>Let's Connect</h2>
+  <p class="contact-subtitle">Feel free to reach out via email or any of the platforms below.</p>
+
+  <div class="contact-content">
+    <!-- Contact Form -->
+    <form class="contact-form" action="mailto:your@email.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <!-- Social Links -->
+    <div class="contact-socials">
+      <a href="https://facebook.com/yourprofile" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+</section>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
