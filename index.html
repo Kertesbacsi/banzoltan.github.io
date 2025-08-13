@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfólió</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -42,11 +43,19 @@
     </div>
     <div class="home-right">
       <img src="person.jpg" alt="Portrait" class="profile-img" />
+      <div class="button-group2">
+        <a href="#contact" class="btn2 hire-btn">Hire Me</a>
+        <a href="cv.pdf" download class="btn2 cv-btn">Download CV</a>
+      </div>
     </div>
   </section>
 
   <!-- About Section -->
+    <div class="cim">
+      <h1 id="animatedText">Did you know that I...</h1>
+    </div>
   <section id="about" class="about-section">
+   
     <div class="about-left">
       <div class="about-main-img">
         
@@ -264,17 +273,14 @@
   <p class="contact-subtitle">Feel free to reach out via email or any of the platforms below.</p>
 
   <div class="contact-content">
-    <!-- Contact Form -->
-    <form class="contact-form" action="mailto:your@email.com" method="POST" enctype="text/plain">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-
-    <!-- Social Links -->
-   
-  </div>
+  <!-- Contact Form -->
+  <form class="contact-form" id="contactForm">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</div>
 </section>
 
  <div class="contact-socials">
@@ -284,7 +290,8 @@
       <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
     </div>
 
-  <script src="script.js"></script>
+   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+   <script src="script.js"></script>
 </body>
 </html>
 

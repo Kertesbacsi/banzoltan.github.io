@@ -65,10 +65,10 @@ type();
 
 // About szekció dinamikus kép- és szövegváltás
 const aboutTexts = [
-  "In my free time, I enjoy reading, spending time outdoors, and exploring new interests. I’ve always been curious and hands-on—whether it's tinkering with things, building LEGO models, or repairing something just for the fun of it. I used to be an avid gamer, spending hours playing all kinds of video games, and although I play less now, I still appreciate the creativity and challenge they offer. Recently, I’ve taken up motorcycling, which has quickly become a new passion of mine. At the same time, I truly enjoy driving and find peace in simply being behind the wheel. Despite my active lifestyle, I also value quiet moments—watching a good movie in the evening or just relaxing and doing nothing. I would describe myself as someone who lives a diverse life. I believe in experiencing as much as I can while I'm young, and I strive to make the most out of every opportunity that comes my way. By the way the most important is to spend time with my friends, they always heal me. :)",
-  "I am currently serving as a volunteer reservist in the Hungarian Defence Forces, and I am close to completing my basic military training. This experience has taught me the importance of discipline, perseverance, and teamwork. As a reservist, I have learned to adapt quickly to demanding situations, follow strict protocols, and maintain both physical and mental resilience. The training has helped me develop a strong sense of duty, reliability, and the ability to perform effectively under pressure—skills that are valuable both in military and civilian life.",
-  "I currently serve as the Head of Social Affairs at the Student Union of the University of Pannonia. In this role, I am responsible for overseeing matters related to social scholarships, dormitory placements, and the evaluation of exceptional student cases. I manage and coordinate the majority of these processes while leading a dedicated team focused on social issues. Through this position, I have developed strong leadership, organizational, and decision-making skills, along with a deep sense of responsibility and empathy. My role requires clear communication, discretion, and a commitment to supporting students in need, which has helped me grow both personally and professionally",
-  "I have been passionate about sports since early childhood. With over 14 years of football behind me and regular strength training at the gym, physical activity has always been a core part of my life. For me, sport is not just exercise—it’s a form of relaxation and mental clarity. Throughout the years, I’ve explored a wide variety of disciplines, including swimming, rowing, fencing, climbing, and countless ball sports. I genuinely enjoy trying new activities, and movement has become one of the most important pillars of my life. Staying active fuels my motivation, builds discipline, and helps me maintain a balanced and healthy lifestyle."
+  "enjoy reading, spending time outdoors, and exploring new interests in my free time. I’ve always been curious and hands-on—whether it's tinkering with things, building LEGO models, or repairing something just for the fun of it. I used to be an avid gamer, spending hours playing all kinds of video games, and although I play less now, I still appreciate the creativity and challenge they offer. Recently, I’ve taken up motorcycling, which has quickly become a new passion of mine. At the same time, I truly enjoy driving and find peace in simply being behind the wheel. Despite my active lifestyle, I also value quiet moments—watching a good movie in the evening or just relaxing and doing nothing. I would describe myself as someone who lives a diverse life. I believe in experiencing as much as I can while I'm young, and I strive to make the most out of every opportunity that comes my way. By the way the most important is to spend time with my friends, they always heal me. :)",
+  " am currently serving as a volunteer reservist in the Hungarian Defence Forces, and I am close to completing my basic military training. This experience has taught me the importance of discipline, perseverance, and teamwork. As a reservist, I have learned to adapt quickly to demanding situations, follow strict protocols, and maintain both physical and mental resilience. The training has helped me develop a strong sense of duty, reliability, and the ability to perform effectively under pressure—skills that are valuable both in military and civilian life.",
+  " currently serve as the Head of Social Affairs at the Student Union of the University of Pannonia. In this role, I am responsible for overseeing matters related to social scholarships, dormitory placements, and the evaluation of exceptional student cases. I manage and coordinate the majority of these processes while leading a dedicated team focused on social issues. Through this position, I have developed strong leadership, organizational, and decision-making skills, along with a deep sense of responsibility and empathy. My role requires clear communication, discretion, and a commitment to supporting students in need, which has helped me grow both personally and professionally",
+  " have been passionate about sports since early childhood. With over 14 years of football behind me and regular strength training at the gym, physical activity has always been a core part of my life. For me, sport is not just exercise—it’s a form of relaxation and mental clarity. Throughout the years, I’ve explored a wide variety of disciplines, including swimming, rowing, fencing, climbing, and countless ball sports. I genuinely enjoy trying new activities, and movement has become one of the most important pillars of my life. Staying active fuels my motivation, builds discipline, and helps me maintain a balanced and healthy lifestyle."
 ];
 
 const thumbs = document.querySelectorAll(".thumb");
@@ -169,3 +169,22 @@ menuToggle.addEventListener('click', () => {
   navbar.classList.toggle('show');
 });
 
+ const form = document.getElementById('contactForm');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value
+    };
+
+    fetch('/send-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(data => alert(data.message))
+    .catch(err => alert('Hiba történt: ' + err));
+  });
