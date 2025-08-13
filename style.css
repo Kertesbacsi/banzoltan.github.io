@@ -648,7 +648,6 @@ body {
 /* Tablet nézet */
 @media (max-width: 1024px) {
   .timeline-item::before { top:0px ; display: none;}
-  .timeline-container{gap: 50px; }
   .navbar { gap: 20px; }
   .home-section {
     flex-direction: column;
@@ -658,6 +657,11 @@ body {
   }
   .home-left, .home-right { width: 100%; }
   .about-section { flex-direction: column; text-align: center; }
+  #about-text{
+    margin: 40px;
+  }
+  .button-group{ justify-content: center;}
+  .profile-img{width: 60%;}
   .about-left, .about-right { width: 100%; padding: 0; }
   .about-main-img img { width: 70%; height: auto; }
   .timeline-item.left .content,
@@ -669,12 +673,13 @@ body {
     display: flex;
     flex-direction: column;
   }
-  .projects-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+  .projects-grid { grid-template-columns: repeat(3, 1fr); gap: 70px; margin: 40px; }
   .skills2-item { min-width: 240px; max-width: 240px; }
 }
 
 /* Telefon nézet */
 @media (max-width: 768px) {
+   .timeline-container{gap: 50px; }
   .navbar {
     display: none;
     flex-direction: column;
@@ -690,9 +695,9 @@ body {
   .navbar.show { display: flex; }
   .mobile-menu-icon { display: block; }
   .nav-link { font-size: 18px; padding: 10px; }
-  .home-section { flex-direction: column; padding: 100px 20px 40px; }
+  .home-section { flex-direction: column; padding: 50px 20px 40px; }
   .home-left h1 { font-size: 28px; }
-  .home-left h2 { font-size: 22px; }
+  .home-left h2 { font-size: 30px; }
   .home-left h3 { font-size: 16px; }
   .profile-img { max-width: 80%; margin-top: 20px; }
   .button-group { flex-direction: column; gap: 10px; }
@@ -702,8 +707,9 @@ body {
   .thumb { width: 50px; height: 70px; }
   .about-right { font-size: 15px; padding: 20px; }
   .timeline-item { margin: 30px 0; }
-  .projects-grid { grid-template-columns: 1fr; gap: 20px; }
-  .skills2-item { min-width: 200px; max-width: 200px; margin-right: 15px; }
+  .projects-grid { grid-template-columns: repeat(2, 1fr); gap: 70px; margin: 40px; }
+  .skills2-item { min-width: 400px; max-width: 200px; margin-right: 15px; }
+  
   .contact-content { flex-direction: column; align-items: center; gap: 30px; }
   .contact-form { margin: 0; }
   .contact-socials { flex-direction: row; gap: 20px; }
@@ -712,10 +718,11 @@ body {
 /* Kis telefonok */
 @media (max-width: 480px) {
   .home-left h1 { font-size: 24px; }
-  .home-left h2 { font-size: 18px; }
+  .home-left h2 { font-size: 25px; }
   .home-left h3 { font-size: 14px; }
-  .skills2-item { min-width: 160px; max-width: 160px; }
   .projects-section h2,
   .timeline-section h2,
   .contact-section h2 { font-size: 1.8rem; }
+  .projects-grid { grid-template-columns: repeat(2, 2fr); gap: 50px; margin: 40px; }
+  .project-name {font-size: 0.9rem;}
 }
