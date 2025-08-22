@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfólió</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -15,11 +16,13 @@
 <body>
 
   <!-- Navbar -->
-  <header class="navbar-container">
-    <nav class="navbar">
+   <header class="navbar-container">
+    <div class="mobile-menu-icon">
+      <div id="menuToggle">&#9776;</div>
+    </div>
+    <nav class="navbar" id="navbar">
       <a href="#about" class="nav-link">About me</a>
       <a href="#skills" class="nav-link">Skills</a>
-      
       <a href="#home" class="nav-link active">Home</a>
       <a href="#projects" class="nav-link">Projects</a>
       <a href="#contact" class="nav-link">Contact</a>
@@ -40,11 +43,19 @@
     </div>
     <div class="home-right">
       <img src="person.jpg" alt="Portrait" class="profile-img" />
+      <div class="button-group2">
+        <a href="#contact" class="btn2 hire-btn">Hire Me</a>
+        <a href="cv.pdf" download class="btn2 cv-btn">Download CV</a>
+      </div>
     </div>
   </section>
 
   <!-- About Section -->
+    <div class="cim">
+      <h1 id="animatedText">Did you know that I...</h1>
+    </div>
   <section id="about" class="about-section">
+   
     <div class="about-left">
       <div class="about-main-img">
         
@@ -107,6 +118,81 @@
     <div class="timeline-item right" data-year="2025.06." data-text="Driver licence for motorcycle" data-icon="fa-motorcycle"></div>
   </div>
 </section>
+
+<section class="skills2">
+  <div class="skills2-track-wrapper">
+    <div class="skills2-track">
+      <!-- EREDETI 8 DB -->
+      <div class="skills2-item item1">
+        <h4>Language</h4>
+        <p>Fluent in English with strong speaking, listening, and writing skills. Holding an official language examination certificate. Currently learning German.</p>
+      </div>
+      <div class="skills2-item item2">
+        <h4>Driving Licences</h4>
+        <p>Licensed to drive both a car and a motorcycle.</p>
+      </div>
+      <div class="skills2-item item1">
+        <h4>HTML, CSS, JS</h4>
+        <p>Basic knowledge with several projects completed. Continuously learning and integrating AI into development workflows.</p>
+      </div>
+      <div class="skills2-item item2">
+        <h4>IT Networking</h4>
+        <p>Certified in IT networking. Gained practical experience through university and small projects.</p>
+      </div>
+      <div class="skills2-item item1">
+        <h4>Microsoft Office</h4>
+        <p>Experience in Excel, Forms, Word, etc., including AppScript for automation with functions, macros, and JavaScript.</p>
+      </div>
+      <div class="skills2-item item2">
+        <h4>Python</h4>
+        <p>Created a car rental site using Python and Flask. Applying knowledge to personal and freelance web projects.</p>
+      </div>
+      <div class="skills2-item item1">
+        <h4>Head of Social Affairs</h4>
+        <p>This role improved my interpersonal and leadership skills, teaching me how to handle difficult situations professionally.</p>
+      </div>
+      <div class="skills2-item item2">
+        <h4>Engineering</h4>
+        <p>Engineering has sharpened my critical thinking and taught me that almost any problem can be solved with the right mindset.</p>
+      </div>
+
+      <!-- DUPLIKÁLT 8 DB - hogy loopolva folytatódjon -->
+      <div class="skills2-item item1">
+        <h4>Language</h4>
+        <p>Fluent in English with strong speaking, listening, and writing skills. Holding an official language examination certificate. Currently learning German.</p>
+      </div>
+      <div class="skills2-item item2">
+        <h4>Driving Licences</h4>
+        <p>Licensed to drive both a car and a motorcycle.</p>
+      </div>
+      <div class="skills2-item item1">
+        <h4>HTML, CSS, JS</h4>
+        <p>Basic knowledge with several projects completed. Continuously learning and integrating AI into development workflows.</p>
+      </div>
+      <div class="skills2-item item2">
+        <h4>IT Networking</h4>
+        <p>Certified in IT networking. Gained practical experience through university and small projects.</p>
+      </div>
+      <div class="skills2-item item1">
+        <h4>Microsoft Office</h4>
+        <p>Experience in Excel, Forms, Word, etc., including AppScript for automation with functions, macros, and JavaScript.</p>
+      </div>
+      <div class="skills2-item item2">
+        <h4>Python</h4>
+        <p>Created a car rental site using Python and Flask. Applying knowledge to personal and freelance web projects.</p>
+      </div>
+      <div class="skills2-item item1">
+        <h4>Head of Social Affairs</h4>
+        <p>This role improved my interpersonal and leadership skills, teaching me how to handle difficult situations professionally.</p>
+      </div>
+      <div class="skills2-item item2">
+        <h4>Engineering</h4>
+        <p>Engineering has sharpened my critical thinking and taught me that almost any problem can be solved with the right mindset.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
  <section id="projects" class="projects-section">
   <h2>My Projects</h2>
@@ -187,26 +273,25 @@
   <p class="contact-subtitle">Feel free to reach out via email or any of the platforms below.</p>
 
   <div class="contact-content">
-    <!-- Contact Form -->
-    <form class="contact-form" action="mailto:your@email.com" method="POST" enctype="text/plain">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+  <!-- Contact Form -->
+  <form class="contact-form" id="contactForm">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+</section>
 
-    <!-- Social Links -->
-    <div class="contact-socials">
+ <div class="contact-socials">
       <a href="https://facebook.com/yourprofile" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
       <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
       <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
     </div>
-  </div>
-</section>
 
-
-  <script src="script.js"></script>
+   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="script.js"></script>
 </body>
 </html>
 
